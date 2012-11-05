@@ -10,7 +10,6 @@ env:
     - WORKSPACE=$HOME/builds/myplanetdigital
   matrix:
     - DRUSH_VERSION=5.4.0
-    - DRUSH_VERSION=5.7.0
 
 before_install: bash tmp/scripts/travis_before_install.sh
 
