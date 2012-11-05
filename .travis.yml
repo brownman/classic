@@ -10,6 +10,8 @@ mysql:
   username: root
   encoding: utf8
 
-before_script: bash tmp/scripts/travis_install.sh
+before_install: bash tmp/scripts/travis_before_install.sh
 
-script: bash tmp/scripts/travis_test.sh
+before_script:  bash tmp/scripts/travis_install.sh
+
+script:         bash tmp/scripts/travis_test.sh
