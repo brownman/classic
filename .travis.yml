@@ -3,7 +3,7 @@ language: php
 php:
   - 5.4
 
-env: DRUSH_VERSION=5.4.0
+env: DRUSH_VERSION=5.4.0 PROJECT_NAME=classic
 
 mysql:
   database: drupal

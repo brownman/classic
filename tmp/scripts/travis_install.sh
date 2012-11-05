@@ -4,15 +4,15 @@
 cd ../
 export WORKSPACE=$PWD
 echo "WORKSPACE set to: $WORKSPACE"
-mv classic profile
-drush make --prepare-install profile/build-classic.make drupal --yes
+mv $PROJECT_NAME profile
+drush make --prepare-install profile/build-$PROJECT_NAME.make drupal --yes
 cd drupal
-drush si classic --sites-subdir=default --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=classic --site-mail=admin@example.com --site-name="Drupal Classic Profile" --yes
+drush si $PROJECT_NAME --sites-subdir=default --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=$PROJECT_NAME --site-mail=admin@example.com --site-name=$PROJECT_NAME --yes
 drush cc all --yes
 
 # Run composer
-cd $WORKSPACE/drupal/profiles/classic/tmp/tests/behat
+cd $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat
 composer install
 
 # Create drush alias
-cp $WORKSPACE/drupal/profiles/classic/tmp/tests/behat/classic.aliases.drushrc.php ~/.drush/
+cp $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
