@@ -13,3 +13,9 @@ phpenv rehash
 
 # Download Selenium server
 wget -O $WORKSPACE/selenium-server.jar http://selenium.googlecode.com/files/selenium-server-standalone-$SELENIUM_VERSION.jar
+
+# Download CasperJs
+cd $WORKSPACE
+git clone git://github.com/n1k0/casperjs.git
+cd casperjs
+git checkout tags/$CASPERJS_VERSION
