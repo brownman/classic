@@ -2,7 +2,6 @@
 
 # Install Classic Profile
 cd ../
-export WORKSPACE=$PWD
 echo "WORKSPACE set to: $WORKSPACE"
 mv $PROJECT_NAME profile
 drush make --prepare-install profile/build-$PROJECT_NAME.make drupal --yes
