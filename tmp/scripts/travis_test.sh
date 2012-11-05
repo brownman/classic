@@ -8,7 +8,7 @@ sleep 3 # give xvfb some time to rebuild
 wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar
 java -jar selenium-server-standalone-2.25.0.jar -p 4444 &
 sleep 5
+cd /home/travis/builds/myplanetdigital/drupal/profiles/classic/tmp/tests/behat
 echo $PWD
-cd drupal/profiles/classic/tmp/tests/behat
 touch behat.local.yml
 ./bin/behat
