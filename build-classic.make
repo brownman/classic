@@ -3,7 +3,7 @@ core = 7.x
 
 includes[] = drupal-org-core.make
 
-projects[myplanet][type] = profile
-projects[myplanet][download][type] = git
-projects[myplanet][download][url] = https://github.com/myplanetdigital/classic.git
-projects[myplanet][download][revision] = master
+projects[classic][type] = profile
+projects[classic][download][type] = git
+projects[classic][download][url] = https://github.com/myplanetdigital/classic.git
+projects[classic][download][revision] = master
