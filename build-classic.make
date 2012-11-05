@@ -1,6 +1,9 @@
 api = 2
 core = 7.x
 
-projects[drupal][version] = 7.16
 includes[] = drupal-org-core.make
-includes[] = drupal-org.make
+
+projects[myplanet][type] = profile
+projects[myplanet][download][type] = git
+projects[myplanet][download][url] = https://github.com/myplanetdigital/classic.git
+projects[myplanet][download][revision] = master

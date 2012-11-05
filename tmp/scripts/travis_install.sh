@@ -15,10 +15,8 @@ cd ../../../
 
 # Install Classic Profile
 cd ../
-mkdir -p drupal/profiles
-mv classic drupal/profiles/
-cd drupal
-drush make --prepare-install profiles/classic/build-classic.make --yes
+mv classic profile
+drush make --prepare-install profile/build-classic.make $WORKSPACE/drupal --yes
 sudo chmod -R 777 sites/all/modules
 drush si classic --sites-subdir=default --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=classic --site-mail=admin@example.com --site-name="Drupal Classic Profile" --yes
 drush cc all --yes
