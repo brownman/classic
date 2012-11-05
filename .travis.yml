@@ -8,46 +8,6 @@ mysql:
   username: root
   encoding: utf8
 
-before_script:
-  # Create MySQL Database
-  - mysql -e 'create database drupal;'
+before_script: bash tmp/scripts/travis_install.sh
 
-  # Install Drush
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush-5.4.0
-  - phpenv rehash
-
-  # Run composer
-  - cd ./tests/behat
-  - composer install
-  - cd ../../
-
-  # Install Classic Profile
-  - cd ../
-  - mkdir profiles
-  - mv classic profiles/
-  - mkdir drupal
-  - mv profiles drupal/
-  - cd drupal
-  - drush make --prepare-install profiles/classic/build-classic.make --yes
-  - sudo chmod -R 777 sites/all/modules
-  - drush si classic --sites-subdir=default --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=classic --site-mail=admin@example.com --site-name="Drupal Classic Profile" --yes
-  - drush cc all --yes
-  - cd ../
-
-  # Create drush alias
-  - cp drupal/profiles/classic/tests/behat/classic.aliases.drushrc.php ~/.drush/
-
-script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
-  - sudo drush @classic.local runserver --server=builtin 80 &
-  - sleep 3 # give xvfb some time to rebuild
-
-  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar
-  - java -jar selenium-server-standalone-2.25.0.jar -p 4444 &
-  - sleep 5
-  - cd drupal/profiles/classic/tests/behat
-  - touch behat.local.yml
-  - ./bin/behat
+script: bash tmp/scripts/travis_test.sh
