@@ -1,6 +1,6 @@
-tests/behat/composer.phar
-tests/behat/composer.lock
-tests/behat/vendor
-tests/behat/bin
-tests/behat/behat.local.yml
-modules/contrib
+tmp/tests/behat/composer.phar
+tmp/tests/behat/composer.lock
+tmp/tests/behat/vendor
+tmp/tests/behat/bin
+tmp/tests/behat/behat.local.yml
+*/contrib
