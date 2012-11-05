@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Start X Virtual Framebuffer
+DISPLAY=:99.0 sh -e /etc/init.d/xvfb start
+
 # Create MySQL Database
 mysql -e "CREATE DATABASE $PROJECT_NAME;"
 
