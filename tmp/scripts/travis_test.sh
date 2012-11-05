@@ -2,6 +2,7 @@
 export DISPLAY=:99.0
 sh -e /etc/init.d/xvfb start
 sleep 3 # give xvfb some time to start
+echo "The WORKSPACE is: $WORKSPACE"
 sudo drush @$PROJECT_NAME.local runserver --server=builtin 80 &
 sleep 3 # give xvfb some time to rebuild
 
