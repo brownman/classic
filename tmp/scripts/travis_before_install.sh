@@ -7,5 +7,3 @@ mysql -e "CREATE DATABASE $PROJECT_NAME;"
 pear channel-discover pear.drush.org
 pear install drush/drush-$DRUSH_VERSION
 phpenv rehash
-
-sh -e /etc/init.d/xvfb start
