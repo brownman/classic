@@ -8,7 +8,6 @@ env:
     - PROJECT_NAME=classic
     - SELENIUM_VERSION=2.25.0
     - WORKSPACE=$HOME/builds/myplanetdigital
-    - DISPLAY=:99.0
   matrix:
     - DRUSH_VERSION=5.4.0
 

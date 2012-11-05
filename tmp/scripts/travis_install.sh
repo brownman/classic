@@ -19,4 +19,5 @@ drush cc all --yes
 cd $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat
 composer install
 
+# Copy drush alias
 cp $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
