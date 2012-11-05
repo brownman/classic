@@ -1,16 +1,22 @@
 #!/bin/sh
 
 # Install Classic Profile
-cd ../
-echo "WORKSPACE set to: $WORKSPACE"
+cd $WORKSPACE
 mv $PROJECT_NAME profile
-drush make profile/build-$PROJECT_NAME.make drupal --yes
-cd drupal
-drush si $PROJECT_NAME --sites-subdir=default --db-url=mysql://root:@127.0.0.1/$PROJECT_NAME --account-name=admin --account-pass=$PROJECT_NAME --site-mail=admin@example.com --site-name=$PROJECT_NAME --yes
+drush make profile/build-$PROJECT_NAME.make build --yes
+cd build
+drush si $PROJECT_NAME \
+  --sites-subdir=default \
+  --db-url=mysql://root:@127.0.0.1/$PROJECT_NAME \
+  --account-name=admin \
+  --account-pass=admin \
+  --site-mail=admin@example.com \
+  --site-name=$PROJECT_NAME \
+  --yes
 drush cc all --yes
 
 # Run composer
-cd $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat
+cd $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat
 composer install
 
-cp $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
+cp $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
