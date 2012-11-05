@@ -15,10 +15,8 @@ cd ../../../
 
 # Install Classic Profile
 cd ../
-mkdir profiles
-mv classic profiles/
-mkdir drupal
-mv profiles drupal/
+mkdir -p drupal/profiles
+mv classic drupal/profiles/
 cd drupal
 drush make --prepare-install profiles/classic/build-classic.make --yes
 sudo chmod -R 777 sites/all/modules
