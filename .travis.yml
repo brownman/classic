@@ -6,7 +6,7 @@ php:
 env:
   global:
     - PROJECT_NAME=classic
-    - SELENIUM_VERSION=2.25.0
+    - SELENIUM_VERSION=2.26.0
     - WORKSPACE=$HOME/builds/myplanetdigital
   matrix:
     - DRUSH_VERSION=5.4.0
