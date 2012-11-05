@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Run CasperJS
+cd $WORKSPACE
+DISPLAY=:99.0 ./casperjs/bin/casperjs test $WORKSPACE/build/$PROJECT_NAME/tmp/tests/casperjs/
+
 # Run selenium server for AJAX
 DISPLAY=:99.0 java -jar $WORKSPACE/selenium-server.jar -p 4444 &
 sleep 10
@@ -8,6 +12,3 @@ sleep 10
 cd $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat
 touch behat.local.yml
 ./bin/behat
-
-# Run CasperJS
-DISPLAY=:99.0 . $WORKSPACE/casperjs/bin/casperjs test $WORKSPACE/build/$PROJECT_NAME/tmp/tests/casperjs/
