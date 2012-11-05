@@ -11,7 +11,7 @@ phpenv rehash
 # Run composer
 cd ./tmp/tests/behat
 composer install
-cd ../../
+cd ../../../
 
 # Install Classic Profile
 cd ../
