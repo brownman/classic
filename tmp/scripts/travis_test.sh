@@ -3,10 +3,6 @@ sh -e /etc/init.d/xvfb start
 sleep 3 # give xvfb some time to start
 cd $WORKSPACE/drupal
 sudo drush runserver --server=builtin 80 &
-drush status
-sudo apt-get install tree
-tree sites
-cat sites/default/settings.php
 sleep 3 # give xvfb some time to rebuild
 
 wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar

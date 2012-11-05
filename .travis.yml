@@ -3,7 +3,7 @@ language: php
 php:
   - 5.4
 
-env: DRUSH_VERSION=5.4.0 PROJECT_NAME=classic WORKSPACE=$HOME/builds/myplanetdigital
+env: DRUSH_VERSION=5.4.0 PROJECT_NAME=classic WORKSPACE=$HOME/builds/myplanetdigital DISPLAY=:99.0
 
 mysql:
   database: drupal
