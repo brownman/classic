@@ -12,3 +12,5 @@ drush cc all --yes
 # Run composer
 cd $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat
 composer install
+
+cp $WORKSPACE/drupal/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
