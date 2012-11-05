@@ -2,7 +2,8 @@
 export DISPLAY=:99.0
 sh -e /etc/init.d/xvfb start
 sleep 3 # give xvfb some time to start
-sudo drush @$PROJECT_NAME.local runserver --server=builtin 80 &
+cd $WORKSPACE/drupal
+sudo drush runserver --server=builtin 80 &
 sleep 3 # give xvfb some time to rebuild
 
 wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar
