@@ -8,4 +8,4 @@ Feature: Dialog
     Given I am on "/dialog/example"
     When I follow "User login"
     And I wait for the dialog box to appear
-    Then I should see "Enter your Drupal Classic Profile username."
+    Then I should see "Enter your classic username."
