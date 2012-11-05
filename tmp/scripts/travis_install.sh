@@ -8,11 +8,6 @@ pear channel-discover pear.drush.org
 pear install drush/drush-5.4.0
 phpenv rehash
 
-# Run composer
-cd ./tmp/tests/behat
-composer install
-cd ../../../
-
 # Install Classic Profile
 cd ../
 mv classic profile
@@ -23,6 +18,10 @@ drush si classic --sites-subdir=default --db-url=mysql://root:@127.0.0.1/drupal 
 drush cc all --yes
 cd ../
 
+# Run composer
+cd drupal/profiles/classic/tmp/tests/behat
+composer install
+cd ../../../../../..
+
 # Create drush alias
 cp drupal/profiles/classic/tmp/tests/behat/classic.aliases.drushrc.php ~/.drush/
-
