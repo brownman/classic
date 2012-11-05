@@ -5,7 +5,7 @@ mysql -e 'create database drupal;'
 
 # Install Drush
 pear channel-discover pear.drush.org
-pear install drush/drush-5.4.0
+pear install drush/drush-$DRUSH_VERSION
 phpenv rehash
 
 # Install Classic Profile
