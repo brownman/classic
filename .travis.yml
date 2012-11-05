@@ -11,11 +11,6 @@ env:
   matrix:
     - DRUSH_VERSION=5.4.0
 
-mysql:
-  database: drupal
-  username: root
-  encoding: utf8
-
 before_install: bash tmp/scripts/travis_before_install.sh
 
 before_script:  bash tmp/scripts/travis_install.sh
