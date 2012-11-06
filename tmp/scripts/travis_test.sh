@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sleep 5
+
 # Run CasperJS
 cd $WORKSPACE
 DISPLAY=:99.0 ./casperjs/bin/casperjs test $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/casperjs/
