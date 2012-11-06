@@ -11,4 +11,6 @@ casper.start('http://localhost:80/', function() {
   this.test.assertTitle('Welcome to classic | classic', 'Title seems correct');
 });
 
-casper.run();
+casper.run(function() {
+  this.test.done();
+});
