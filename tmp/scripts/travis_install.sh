@@ -22,7 +22,7 @@ composer install
 # Copy drush alias
 cp $WORKSPACE/build/profiles/$PROJECT_NAME/tmp/tests/behat/$PROJECT_NAME.aliases.drushrc.php ~/.drush/
 
-# Start drush webserver
+# Start drush webserver (sudo needed for port 80)
 sudo drush @$PROJECT_NAME.local runserver --server=builtin 80 &
 sleep 3 # give xvfb some time to rebuild
 
