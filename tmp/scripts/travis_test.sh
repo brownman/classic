@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Fail when any test suite fails.
+set -e
+
 sleep 5
 
 # Run CasperJS
