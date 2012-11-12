@@ -2,7 +2,7 @@
 
 A copy of the Drupal 7 Standard profile, with Behat/Mink testing using Travis CI.
 
-[![Build Status](https://secure.travis-ci.org/sprice/classic.png)](http://travis-ci.org/sprice/classic)
+[![Build Status](https://secure.travis-ci.org/myplanetdigital/classic.png)](http://travis-ci.org/myplanetdigital/classic)
 
 ## Installation
 
