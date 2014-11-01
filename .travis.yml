@@ -8,7 +8,7 @@ env:
     - PROJECT_NAME=classic
     - SELENIUM_VERSION=2.26.0
     - CASPERJS_VERSION=0.6.10
-    - WORKSPACE=$HOME/builds/myplanetdigital
+    - WORKSPACE=$HOME/builds/brownman
     - PHANTOMJS_EXECUTABLE='phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes'
   matrix:
     - DRUSH_VERSION=5.4.0
